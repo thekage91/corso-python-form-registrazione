@@ -1,0 +1,28 @@
+<section class="has-error">
+  <h2>Aggiungi un nuovo libro</h2>
+
+  <!-- <form onsubmit="aggiungiLibro(); return false;"> -->
+  <form action="/aggiungi_libro" method="post">
+    <label for="titolo">Titolo del libro:</label><br />
+    <input
+      type="text"
+      id="titolo"
+      minlength="10"
+      name="titolo"
+      placeholder="Qui va il titolo del libro"
+    /><br /><br />
+
+    <label for="autore">Autore:</label><br />
+    <input type="text" id="autore" name="autore" />
+
+    <label for="isbn">ISBN:</label><br />
+    <input type="text" id="isbn" name="isbn" /><br /><br />
+
+    <label for="isbn">ISBN:</label><br />
+    <input type="date" id="isbn" name="isbn" /><br /><br />
+
+    <input type="reset" value="Reset" />
+
+    <button type="submit">Aggiungi libro</button>
+  </form>
+</section>

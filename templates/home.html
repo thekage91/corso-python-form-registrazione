@@ -1,0 +1,37 @@
+{% extends "layout.html" %} {% block body %}
+<h1>Benvenuti nel corso di Python</h1>
+<a href="/login">Vai al login</a>
+{% endblock %} {% macro qualunque_cosa(label_text, nome, valore='', tipo='text')
+%}
+<label for="{{ nome }}">{{ label_text }}</label>
+<br />
+<input type="{{ tipo }}" name="{{ nome }}" value="{{ valore }}" />
+{% endmacro %} {{ input('nome_utente') }} {{ input('password', 'password', '',
+'password') }} {{ input('email', 'email') }} {{ input('invia', 'invia', 'Invia',
+'submit') }} {% endblock %} {% if books %}
+<table>
+  <caption>
+    Libri attualmente presenti
+  </caption>
+  <thead>
+    <tr>
+      <th>Titolo</th>
+      <th>Autore</th>
+      <th>ISBN</th>
+      <th>Stato</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+    <tr>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.isbn }}</td>
+      <td>{{ book.status }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Nessun libro disponibile.</p>
+{% endif %}

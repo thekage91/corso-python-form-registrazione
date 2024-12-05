@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<title>My Application</title>
+<header>
+  <h1>Gestione della Libreria</h1>
+  <p>Benvenuti nell'interfaccia per gestire i libri della nostra biblioteca.</p>
+</header>
+{% with messages = get_flashed_messages() %} {% if messages %}
+<ul class="flashes">
+  {% for message in messages %}
+  <li>{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endwith %} {% block body %} {% endblock %}

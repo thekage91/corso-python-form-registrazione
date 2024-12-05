@@ -1,0 +1,12 @@
+{% extends "layout.html" %} 
+
+{% block body %}
+<h1>{{ title }}</h1>
+<form method="post">
+  {{ form.hidden_tag() }} {{ form.username.label }} {{ form.username(size=20) }}
+  {% for error in form.username.errors %}
+  <span style="color: red;">{{ error }}</span>
+  {% endfor %} {{ form.password.label }} {{ form.password(size=20) }} 
+  {{ form.submit() }}
+</form>
+{% endblock %}

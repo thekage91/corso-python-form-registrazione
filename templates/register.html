@@ -1,0 +1,27 @@
+<!-- registrazione.html -->
+<h1>{{ title }}</h1>
+<form action="/register" method="post">
+  {{ form.hidden_tag() }}
+  
+  {{ form.username.label }} 
+  {{ form.username(size=20) }}
+  <br /><br />
+
+  {% for error in form.username.errors %}
+  <span style="color: red;">{{ error }}</span>
+
+  {% endfor %} 
+  
+  {{ form.email.label }} 
+  {{ form.email(size=20) }}
+  
+  <br />
+  <br />
+  
+  {{ form.password.label }} 
+  {{ form.password(size=20) }} 
+  
+  <br />
+  <br />
+  {{ form.submit() }}
+</form>
